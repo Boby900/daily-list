@@ -6,24 +6,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/9a1d33ccb7.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <h1>Todos</h1>
-    <ul>
-    <% todos.forEach( el => { %>
-        <li class='todoItem' data-id='<%=el._id%>'>
-            <span class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.todo %></span>
-            <span class='del'> Delete </span>
-        </li>
-    <% }) %>    
-    </ul>
+    <header class="text-center ... mt-2 bg-indigo-500 shadow-lg shadow-indigo-500/50 ... text-amber-950 font-bold">
+        <h2>Todos</h2>
+    </header>
+    <section>
+        <form action="/todos/createTodo" method='POST'>
+            <div class="first-div">
+                <input type="text" autofocus="on" placeholder="Enter Todo Item" name='todoItem'>
+            </div>
+            <div id="second-div">
+                <button type="submit" class="bg-cyan-500 hover:bg-cyan-600 ... p-1.5 mt-4 rounded-lg font-semibold ">submit</button>
+            </div>
+            
+        </form>
+    </section>
+   
+    <section class="ml-3 flex ... justify-around ... sm: flex-col ... ml-3">
+        <section class="ml-8 sm: order-last">
+            <ul>
+                <% todos.forEach( el => { %>
+                    <li class='todoItem' data-id='<%=el._id%>'>
+                        <span class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.todo %><i class="fa-solid fa-square-check"></i></span>
+                        <span class='del'> <i class="fa-solid fa-trash-can"></i></span>
+                    </li>
+                <% }) %>    
+                </ul>
+        </section>
+        <section>
+            <h2 class="ml-5">Things left to do: <%= left %></h2>
+        </section>
+    </section>
+   
 
-    <h2>Things left to do: <%= left %></h2>
+   
 
-    <form action="/todos/createTodo" method='POST'>
-        <input type="text" placeholder="Enter Todo Item" name='todoItem'>
-        <input type="submit">
-    </form>
+  
+
+   
 
     <script src="js/main.js"></script>
 </body>

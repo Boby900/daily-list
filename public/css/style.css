@@ -1,10 +1,88 @@
+body{
+    font-size: 2rem;
+    font-family: 'Ubuntu', sans-serif;
+}
+header{
+    display: flex;
+    height: 100px;
+    flex-direction: column;
+    
+}
+div{
+    text-align: center;
+}
+.heading{
+    color: black;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+h2{
+    transform: translateY(20px);
+}
+.btns{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 2rem;
+    padding: 0.5em;
+    
+    margin:   0 auto;
+}
 h1{
     color: red;
+    margin-left: 2em;
+}
+.btn-outline-secondary{
+    margin-left: 2em;
+    font-size: 3em;
 }
 .completed{
     text-decoration: line-through;
     color: gray;
+    
 }
-.not{
-    text-decoration: underline;
+
+li{
+    list-style-type: disc;
+}
+ul{
+    list-style-type: disc;
+}
+section:first-of-type{
+    display: flex;
+    margin-top: 1em;
+    justify-content: center;
+    flex-direction: column;
+}
+section form input:first-of-type{
+    width: 80%;
+    font-size: 2rem;
+    height: 100%;
+}
+#second-div input{
+    width: 20%; 
+    margin-top: 0.5em;
+}
+.fa-trash-can:hover{
+    cursor: pointer;
+}
+i{
+    margin-left: 0.3em;
+}
+
+
+@media (max-width:576px) {
+ 
+    .heading{
+        font-size: 1.5rem;
+        height: 200px;
+        text-align: center;
+       
+    }
+    .btns{
+        padding: 2.9px;
+        font-size: 1em;
+        margin: 0.5px;
+    }
+    #second-div input{
+       
+        width: 30%;
+    }
 }
